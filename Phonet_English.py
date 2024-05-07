@@ -141,7 +141,7 @@ class Phonet_English:
         
     def load_model(self):
         input_size=(self.len_seq, self.nfeat)
-        model_file="Trained_Model/model.h5"     #----------------Load the model for trained for probablities
+        model_file="Phonet_English/Trained_Model/model.h5"     #----------------Load the model for trained for probablities
         Model=self.model(input_size)
         Model.load_weights(model_file)
         return Model
@@ -159,14 +159,14 @@ class Phonet_English:
 
     def load_model_phon(self):
         input_size=(self.len_seq, self.nfeat)
-        Model_phonemes="Trained_Model/phonemes_weights.hdf5"   #---------------Load the model for Phoneme recognition
+        Model_phonemes="Phonet_English/Trained_Model/phonemes_weights.hdf5"   #---------------Load the model for Phoneme recognition
         Model_phon=self.modelp(input_size)
         Model_phon.load_weights(Model_phonemes)
         return Model_phon
 
     def load_scaler(self):
-        file_mu="Trained_Model/mu.npy"                                 #----------------Load the files
-        file_std="Trained_Model/std.npy"                               #----------------Load the files
+        file_mu="Phonet_English/Trained_Model/mu.npy"                                 #----------------Load the files
+        file_std="Phonet_English/Trained_Model/std.npy"                               #----------------Load the files
         MU=np.load(file_mu)
         STD=np.load(file_std)
 
